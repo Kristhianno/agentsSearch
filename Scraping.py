@@ -13,7 +13,7 @@ groq_api_key = os.getenv("GROQ_API_KEY")
 
 
 # Criando as instâncias LLMs
-llama3 = ChatGroq(api_key=groq_api_key, model="groq/llama3-8b-8192")
+llama3 = ChatGroq(api_key=groq_api_key, model="groq/llama3-70b-8192")
 
 
 # Configurando o Streamlit 
@@ -79,7 +79,7 @@ if st.button('Iniciar Análise'):
         crew_analise = Crew(
             agents=[Analista, Diretor],
             tasks=[tarefa_analista, tarefa_diretor],
-            process=Process.sequential  # Sequential execution
+            process=Process.sequential  
         )
 
         # Iniciando a análise com Spinner
